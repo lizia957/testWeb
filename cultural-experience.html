@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文化体验 - 陕西旅游</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .navbar a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #c41230;
+        }
+
+        .main-content {
+            padding-top: 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px 40px;
+        }
+
+        .culture-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #333;
+            font-size: 2.5rem;
+        }
+
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .culture-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .culture-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .culture-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .culture-info {
+            padding: 20px;
+        }
+
+        .culture-info h3 {
+            color: #c41230;
+            margin-bottom: 10px;
+        }
+
+        .culture-details {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #c41230;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #a30f28;
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 5% 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h4 {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #fff;
+            text-decoration: none;
+            line-height: 1.8;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            padding: 5px 15px;
+            border: 1px solid #fff;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #555;
+            color: #fff;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="tourist-spots.html">旅游景点</a></li>
+            <li><a href="cultural-experience.html">文化体验</a></li>
+            <li><a href="travel-guide.html">旅游攻略</a></li>
+            <li><a href="book.html">预订服务</a></li>
+            <li><a href="contact.html">联系我们</a></li>
+        </ul>
+    </nav>
+
+    <!-- 主要内容区域 -->
+    <main class="main-content">
+        <h1 class="culture-title">陕西文化体验</h1>
+        
+        <div class="culture-grid">
+            <div class="culture-card">
+                <img src="ll\皮影 .jpg" alt="皮影戏">
+                <div class="culture-info">
+                    <h3>皮影戏表演</h3>
+                    <p>体验非物质文化遗产，感受传统艺术魅力</p>
+                    <div class="culture-details">
+                        <p><strong>体验时长：</strong> 约60分钟</p>
+                        <p><strong>价格：</strong> ¥80/人</p>
+                        <p><strong>地点：</strong> 西安市碑林区书院门</p>
+                    </div>
+                    <a href="#" class="btn">立即预订</a>
+                </div>
+            </div>
+
+            <div class="culture-card">
+                <img src="ll\面食.jpg" alt="陕西面食">
+                <div class="culture-info">
+                    <h3>陕西面食制作</h3>
+                    <p>学习制作biangbiang面、肉夹馍等特色美食</p>
+                    <div class="culture-details">
+                        <p><strong>体验时长：</strong> 约120分钟</p>
+                        <p><strong>价格：</strong> ¥168/人</p>
+                        <p><strong>地点：</strong> 西安市回民街</p>
+                    </div>
+                    <a href="#" class="btn">立即预订</a>
+                </div>
+            </div>
+
+            <div class="culture-card">
+                <img src="ll\茶艺.jpeg" alt="茶艺体验">
+                <div class="culture-info">
+                    <h3>茶艺体验</h3>
+                    <p>品味陕西特色茶文化，体验传统茶道</p>
+                    <div class="culture-details">
+                        <p><strong>体验时长：</strong> 约90分钟</p>
+                        <p><strong>价格：</strong> ¥128/人</p>
+                        <p><strong>地点：</strong> 西安市大雁塔南广场</p>
+                    </div>
+                    <a href="#" class="btn">立即预订</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>联系我们</h4>
+                <p>电话：(029) 8888-8888</p>
+                <p>邮箱：info@shanxitour.com</p>
+                <p>地址：陕西省西安市雁塔区</p>
+            </div>
+            <div class="footer-section">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="tourist-spots.html">旅游景点</a></li>
+                    <li><a href="cultural-experience.html">文化体验</a></li>
+                    <li><a href="travel-guide.html">旅游攻略</a></li>
+                    <li><a href="book.html">在线预订</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>关注我们</h4>
+                <div class="social-links">
+                    <a href="#" title="微信">微信</a>
+                    <a href="#" title="微博">微博</a>
+                    <a href="#" title="抖音">抖音</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 陕西旅游网. 保留所有权利</p>
+        </div>
+    </footer>
+</body>
+</html> 

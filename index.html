@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陕西旅游 - 探索华夏文明的摇篮</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* 导航栏样式 */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .navbar a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #c41230;
+        }
+
+        /* 主要展示区 */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* 特色景点区域 */
+        .highlights {
+            padding: 4rem 5%;
+            background-color: #f9f9f9;
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .highlight-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .highlight-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .highlight-content {
+            padding: 1.5rem;
+        }
+
+        /* 旅游季节区域 */
+        .seasons {
+            padding: 4rem 5%;
+            background-color: white;
+        }
+
+        .season-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .season-card {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            padding: 2rem;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+        }
+
+        /* 用户评价区域 */
+        .testimonials {
+            padding: 4rem 5%;
+            background-color: #f5f5f5;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* 通用样式 */
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: #c41230;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #a30f28;
+        }
+
+        /* 页脚样式 */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            padding: 0 20px;
+        }
+
+        .footer-section h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #c41230;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 10px;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: #fff;
+            color: #333;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="tourist-spots.html">旅游景点</a></li>
+            <li><a href="cultural-experience.html">文化体验</a></li>
+            <li><a href="travel-guide.html">旅游攻略</a></li>
+            <li><a href="book.html">预订服务</a></li>
+            <li><a href="contact.html">联系我们</a></li>
+        </ul>
+    </nav>
+
+    <!-- 主要展示区 -->
+    <section class="hero">
+        <video id="bgVideo" autoplay loop playsinline controls>
+            <source src="./ll/背景视频.mp4" type="video/mp4">
+            您的浏览器不支持视频标签。
+        </video>
+        <div class="hero-content">
+            <h1>探索陕西 感受三千年文明</h1>
+            <p>这里是华夏文明的发祥地，十三朝古都的历史见证，带您领略秦始皇兵马俑的磅礴气势，感受大唐盛世的华贵风采。</p>
+            <a href="book.html" class="btn">立即规划行程</a>
+        </div>
+    </section>
+
+    <!-- 特色景点 -->
+    <section class="highlights">
+        <h2 class="section-title">陕西特色景点</h2>
+        <div class="highlights-grid">
+            <div class="highlight-card">
+                <img src="ll\兵马俑.jpg" alt="兵马俑">
+                <div class="highlight-content">
+                    <h3>秦始皇兵马俑</h3>
+                    <p>世界第八大奇迹，揭秘千年地下军</p>
+                </div>
+            </div>
+            <div class="highlight-card">
+                <img src="ll\华山.jpg" alt="华山">
+                <div class="highlight-content">
+                    <h3>华山</h3>
+                    <p>五岳之西岳，险峻秀丽的自然奇观</p>
+                </div>
+            </div>
+            <div class="highlight-card">
+                <img src="ll\大唐不夜城.jpeg" alt="大唐不夜城">
+                <div class="highlight-content">
+                    <h3>大唐不夜城</h3>
+                    <p>感受盛唐文化，体验不夜长安的繁华</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 旅游季节 -->
+    <section class="seasons">
+        <h2 class="section-title">最佳旅游时节</h2>
+        <div class="season-container">
+            <div class="season-card">
+                <h3>春季</h3>
+                <p>3月-5月</p>
+                <p>春暖花开，适合赏花踏青</p>
+            </div>
+            <div class="season-card">
+                <h3>秋季</h3>
+                <p>9月-11月</p>
+                <p>天高气爽，是旅游的黄金季节</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 用户评价 -->
+    <section class="testimonials">
+        <h2 class="section-title">游客体验</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p>"兵马俑的震撼无法用言语形容，绝对值得一看！"</p>
+                <p>- 张先生</p>
+            </div>
+            <div class="testimonial-card">
+                <p>"华山之行惊险刺激，景色绝美，导游服务很贴心。"</p>
+                <p>- 李女士</p>
+            </div>
+            <div class="testimonial-card">
+                <p>"回民街的美食让人流连忘返，真是一次难忘的旅程。"</p>
+                <p>- 王先生</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>联系我们</h4>
+                <p>电话：(029) 8888-8888</p>
+                <p>邮箱：info@shanxitour.com</p>
+                <p>地址：陕西省西安市雁塔区</p>
+            </div>
+            <div class="footer-section">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="tourist-spots.html">旅游景点</a></li>
+                    <li><a href="cultural-experience.html">文化体验</a></li>
+                    <li><a href="travel-guide.html">旅游攻略</a></li>
+                    <li><a href="book.html">在线预订</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>关注我们</h4>
+                <div class="social-links">
+                    <a href="#" title="微信">微信</a>
+                    <a href="#" title="微博">微博</a>
+                    <a href="#" title="抖音">抖音</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 陕西旅游网. 保留所有权利</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var video = document.getElementById('bgVideo');
+            
+            // 添加点击事件来启用声音
+            document.addEventListener('click', function() {
+                // 尝试播放并打开声音
+                video.muted = false;
+                video.play().catch(function(error) {
+                    console.log("播放失败:", error);
+                });
+            }, { once: true });
+            
+            // 初始自动播放
+            video.play().catch(function(error) {
+                console.log("初始播放失败:", error);
+            });
+        });
+    </script>
+</body>
+</html> 

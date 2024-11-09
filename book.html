@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>预订服务 - 陕西旅游</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .navbar a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #c41230;
+        }
+
+        .main-content {
+            max-width: 1000px;
+            margin: 100px auto;
+            padding: 20px;
+        }
+
+        .booking-title {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+
+        .booking-form {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: #c41230;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #a30f28;
+        }
+
+        .booking-info {
+            margin-top: 40px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .booking-info h3 {
+            color: #c41230;
+            margin-bottom: 15px;
+        }
+
+        .booking-info ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .booking-info li {
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 5% 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h4 {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #fff;
+            text-decoration: none;
+            line-height: 1.8;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            padding: 5px 15px;
+            border: 1px solid #fff;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #555;
+            color: #fff;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="tourist-spots.html">旅游景点</a></li>
+            <li><a href="cultural-experience.html">文化体验</a></li>
+            <li><a href="travel-guide.html">旅游攻略</a></li>
+            <li><a href="book.html">预订服务</a></li>
+            <li><a href="contact.html">联系我们</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <h1 class="booking-title">预订服务</h1>
+        
+        <form class="booking-form">
+            <div class="form-group">
+                <label for="name">姓名</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">联系电话</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">电子邮箱</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="destination">目的地</label>
+                <select id="destination" name="destination" required>
+                    <option value="">请选择景点</option>
+                    <option value="terracotta">兵马俑</option>
+                    <option value="huashan">华山</option>
+                    <option value="datang">大唐不夜城</option>
+                    <option value="other">其他景点</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="date">参观日期</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="people">参观人数</label>
+                <input type="number" id="people" name="people" min="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="notes">特殊要求</label>
+                <textarea id="notes" name="notes"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">提交预订</button>
+        </form>
+
+        <div class="booking-info">
+            <h3>预订须知</h3>
+            <ul>
+                <li>请提前至少3天预订，以便我们更好地为您安排行程。</li>
+                <li>预订确认后，我们的客服人员会在24小时内与您联系。</li>
+                <li>如需取消预订，请提前48小时通知我们。</li>
+                <li>团体预订（10人以上）可享受特别优惠。</li>
+                <li>特殊节假日期间可能会有价格调整，请理解。</li>
+            </ul>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>联系我们</h4>
+                <p>电话：(029) 8888-8888</p>
+                <p>邮箱：info@shanxitour.com</p>
+                <p>地址：陕西省西安市雁塔区</p>
+            </div>
+            <div class="footer-section">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="tourist-spots.html">旅游景点</a></li>
+                    <li><a href="cultural-experience.html">文化体验</a></li>
+                    <li><a href="travel-guide.html">旅游攻略</a></li>
+                    <li><a href="book.html">在线预订</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>关注我们</h4>
+                <div class="social-links">
+                    <a href="#" title="微信">微信</a>
+                    <a href="#" title="微博">微博</a>
+                    <a href="#" title="抖音">抖音</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 陕西旅游网. 保留所有权利</p>
+        </div>
+    </footer>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</body>
+</html>

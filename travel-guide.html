@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅游攻略 - 陕西旅游</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .navbar a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #c41230;
+        }
+
+        .main-content {
+            padding-top: 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px 40px;
+        }
+
+        .guide-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #333;
+            font-size: 2.5rem;
+        }
+
+        .guide-section {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+
+        .guide-section h2 {
+            color: #c41230;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .guide-section h3 {
+            color: #333;
+            margin: 20px 0 10px;
+            font-size: 1.4rem;
+        }
+
+        .guide-section p {
+            margin-bottom: 15px;
+        }
+
+        .guide-section ul {
+            list-style: none;
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .guide-section li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .guide-section li::before {
+            content: "•";
+            color: #c41230;
+            font-weight: bold;
+            position: absolute;
+            left: -15px;
+        }
+
+        .season-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .season-table th,
+        .season-table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .season-table th {
+            background-color: #f5f5f5;
+            font-weight: bold;
+        }
+
+        .season-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 5% 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h4 {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #fff;
+            text-decoration: none;
+            line-height: 1.8;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            padding: 5px 15px;
+            border: 1px solid #fff;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #555;
+            color: #fff;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="tourist-spots.html">旅游景点</a></li>
+            <li><a href="cultural-experience.html">文化体验</a></li>
+            <li><a href="travel-guide.html">旅游攻略</a></li>
+            <li><a href="book.html">预订服务</a></li>
+            <li><a href="contact.html">联系我们</a></li>
+        </ul>
+    </nav>
+
+    <!-- 主要内容区域 -->
+    <main class="main-content">
+        <h1 class="guide-title">旅游攻略</h1>
+
+        <div class="guide-section">
+            <h2>最佳旅游时间</h2>
+            <p>陕西四季分明，每个季节都有其独特的旅游特点。以下是各季节旅游建议：</p>
+            <table class="season-table">
+                <tr>
+                    <th>季节</th>
+                    <th>特点</th>
+                    <th>建议</th>
+                </tr>
+                <tr>
+                    <td>春季（3-5月）</td>
+                    <td>气候宜人，花开满园</td>
+                    <td>适合游览华山、参观城市公园</td>
+                </tr>
+                <tr>
+                    <td>夏季（6-8月）</td>
+                    <td>气温较高，偶有降雨</td>
+                    <td>建议参观博物馆、古迹等室内景点</td>
+                </tr>
+                <tr>
+                    <td>秋季（9-11月）</td>
+                    <td>天高气爽，景色优美</td>
+                    <td>最佳旅游季节，适合所有景点</td>
+                </tr>
+                <tr>
+                    <td>冬季（12-2月）</td>
+                    <td>天气寒冷，游客较少</td>
+                    <td>适合泡温泉、赏雪景</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="guide-section">
+            <h2>交通出行</h2>
+            <h3>到达方式</h3>
+            <ul>
+                <li>飞机：西安咸阳国际机场，有多条国内外航线</li>
+                <li>高铁：西安北站、西安站均有高铁线路连接全国主要城市</li>
+                <li>汽车：西安城东、城南、城北客运站均有长途班车</li>
+            </ul>
+
+            <h3>市内交通</h3>
+            <ul>
+                <li>地铁：目前已开通多条地铁线路，覆盖主要景点</li>
+                <li>公交：公交线路发达，票价1-2元</li>
+                <li>出租车：起步价9元/3公里</li>
+                <li>共享单车：摩拜、哈啰等多个品牌可供选择</li>
+            </ul>
+        </div>
+
+        <div class="guide-section">
+            <h2>住宿建议</h2>
+            <h3>推荐区域</h3>
+            <ul>
+                <li>钟楼回民街：传统美食集中，游客首选</li>
+                <li>大雁塔景区：环境优美，夜景璀璨</li>
+                <li>小寨商圈：购物便利，交通发达</li>
+                <li>城墙内：古城风貌，文化氛围浓厚</li>
+            </ul>
+        </div>
+
+        <div class="guide-section">
+            <h2>美食推荐</h2>
+            <ul>
+                <li>肉夹馍：陕西特色小吃之首</li>
+                <li>凉皮：夏季必尝的开胃美食</li>
+                <li>biangbiang面：独特的宽面，口感劲道</li>
+                <li>羊肉泡馍：冬季暖身佳品</li>
+                <li>甑糕：传统特色小吃</li>
+            </ul>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>联系我们</h4>
+                <p>电话：(029) 8888-8888</p>
+                <p>邮箱：info@shanxitour.com</p>
+                <p>地址：陕西省西安市雁塔区</p>
+            </div>
+            <div class="footer-section">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="tourist-spots.html">旅游景点</a></li>
+                    <li><a href="cultural-experience.html">文化体验</a></li>
+                    <li><a href="travel-guide.html">旅游攻略</a></li>
+                    <li><a href="book.html">在线预订</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>关注我们</h4>
+                <div class="social-links">
+                    <a href="#" title="微信">微信</a>
+                    <a href="#" title="微博">微博</a>
+                    <a href="#" title="抖音">抖音</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 陕西旅游网. 保留所有权利</p>
+        </div>
+    </footer>
+</body>
+</html> 
