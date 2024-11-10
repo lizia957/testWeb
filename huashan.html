@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华山 - 详细信息</title>
+    <style>
+        /* 使用与terracotta.html相同的样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .navbar a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #c41230;
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px 40px;
+        }
+
+        .spot-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .spot-header h1 {
+            color: #c41230;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .spot-image {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .spot-info {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+        }
+
+        .spot-info h2 {
+            color: #c41230;
+            margin-bottom: 20px;
+        }
+
+        .spot-info p {
+            margin-bottom: 15px;
+        }
+
+        .info-section {
+            margin-bottom: 30px;
+        }
+
+        .info-section ul {
+            list-style-position: inside;
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .info-section li {
+            margin-bottom: 10px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #c41230;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: #a30f28;
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 5% 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h4 {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #fff;
+            text-decoration: none;
+            line-height: 1.8;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            padding: 5px 15px;
+            border: 1px solid #fff;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #555;
+            color: #fff;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="../index.html">首页</a></li>
+            <li><a href="../tourist-spots.html">旅游景点</a></li>
+            <li><a href="../cultural-experience.html">文化体验</a></li>
+            <li><a href="../travel-guide.html">旅游攻略</a></li>
+            <li><a href="../book.html">预订服务</a></li>
+            <li><a href="../contact.html">联系我们</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <div class="spot-header">
+            <h1>华山</h1>
+        </div>
+        
+        <img src="../ll/华山.jpg" alt="华山" class="spot-image">
+
+        <div class="spot-info">
+            <div class="info-section">
+                <h2>景点介绍</h2>
+                <p>华山是中国五岳之一的西岳，以险峻著称于世，素有"奇险天下第一山"的说法。华山不仅以其陡峭的山势闻名，更以其丰富的文化内涵和历史遗迹吸引着来自世界各地的游客。</p>
+            </div>
+
+            <div class="info-section">
+                <h2>景点特色</h2>
+                <ul>
+                    <li>五峰：东峰（朝阳峰）、西峰（莲花峰）、南峰（落雁峰）、北峰（云台峰）、中峰（玉女峰），各具特色</li>
+                    <li>长空栈道：世界上最危险的栈道之一，为华山独特景观</li>
+                    <li>华山论剑：武侠小说中的经典场景，充满传奇色彩</li>
+                    <li>日出观景：东峰是观赏日出的最佳位置</li>
+                </ul>
+            </div>
+
+            <div class="info-section">
+                <h2>参观信息</h2>
+                <ul>
+                    <li>开放时间：全天开放</li>
+                    <li>门票价格：¥160（旺季）/ ¥100（淡季）</li>
+                    <li>索道价格：上行120元/人，下行100元/人</li>
+                    <li>建议游览时间：1-2天</li>
+                    <li>地址：华阴市华山景区</li>
+                </ul>
+            </div>
+
+            <div class="info-section">
+                <h2>游览建议</h2>
+                <ul>
+                    <li>建议乘坐索道上山，体力好的游客可以选择徒步</li>
+                    <li>最佳游览季节为春秋两季，夏季炎热，冬季结冰</li>
+                    <li>建议携带充足的水和食物，山上价格较高</li>
+                    <li>注意安全，特别是在长空栈道等险要处</li>
+                </ul>
+            </div>
+
+            <div class="info-section">
+                <h2>交通指南</h2>
+                <p>从西安到华山的交通方式：</p>
+                <ul>
+                    <li>高铁：从西安北站乘坐高铁到华山北站，约35分钟</li>
+                    <li>大巴：从西安城东客运站乘坐大巴直达华山景区</li>
+                    <li>自驾：沿连霍高速公路到达华阴市，按指示牌行驶即可</li>
+                </ul>
+            </div>
+
+            <a href="../tourist-spots.html" class="back-btn">返回景点列表</a>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>联系我们</h4>
+                <p>电话：(029) 8888-8888</p>
+                <p>邮箱：info@shanxitour.com</p>
+                <p>地址：陕西省西安市雁塔区</p>
+            </div>
+            <div class="footer-section">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="../tourist-spots.html">旅游景点</a></li>
+                    <li><a href="../cultural-experience.html">文化体验</a></li>
+                    <li><a href="../travel-guide.html">旅游攻略</a></li>
+                    <li><a href="../book.html">在线预订</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>关注我们</h4>
+                <div class="social-links">
+                    <a href="#" title="微信">微信</a>
+                    <a href="#" title="微博">微博</a>
+                    <a href="#" title="抖音">抖音</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 陕西旅游网. 保留所有权利</p>
+        </div>
+    </footer>
+</body>
+</html> 
