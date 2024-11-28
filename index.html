@@ -113,17 +113,26 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
 
         .highlight-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
         .highlight-card img {
             width: 100%;
             height: 200px;
             object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .highlight-card:hover img {
+            transform: scale(1.05);
         }
 
         .highlight-content {
@@ -151,6 +160,123 @@
             padding: 2rem;
             background-color: #f9f9f9;
             border-radius: 10px;
+            position: relative;
+        }
+
+        /* 轮播图容器样式 */
+        .season-slideshow {
+            width: 100%;
+            height: 300px;
+            margin: 2rem 0;
+            position: relative;
+            perspective: 1400px;
+        }
+
+        .season-slides {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s ease;
+        }
+
+        .season-slide {
+            position: absolute;
+            width: 60%;
+            height: 100%;
+            left: 20%;
+            top: 0;
+            transition: all 0.8s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .season-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* 中间图片样式 */
+        .season-slide.active {
+            transform: translateX(0) translateZ(200px);
+            opacity: 1;
+            z-index: 3;
+        }
+
+        /* 左侧图片样式 */
+        .season-slide.prev {
+            transform: translateX(-70%) translateZ(0) rotateY(25deg);
+            opacity: 0.6;
+            z-index: 2;
+        }
+
+        /* 右侧图片样式 */
+        .season-slide.next {
+            transform: translateX(70%) translateZ(0) rotateY(-25deg);
+            opacity: 0.6;
+            z-index: 2;
+        }
+
+        /* 箭头按钮样式 */
+        .slide-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 24px;
+            color: #333;
+            z-index: 4;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .slide-arrow:hover {
+            background-color: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .slide-arrow.prev {
+            left: 5%;
+        }
+
+        .slide-arrow.next {
+            right: 5%;
+        }
+
+        /* 指示器样式 */
+        .slide-indicators {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 4;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicator.active {
+            background-color: #c41230;
+            transform: scale(1.2);
         }
 
         /* 用户评价区域 */
@@ -286,27 +412,27 @@
     <section class="highlights">
         <h2 class="section-title">陕西特色景点</h2>
         <div class="highlights-grid">
-            <div class="highlight-card">
+            <a href="terracotta.html" class="highlight-card">
                 <img src="ll\兵马俑.jpg" alt="兵马俑">
                 <div class="highlight-content">
                     <h3>秦始皇兵马俑</h3>
                     <p>世界第八大奇迹，揭秘千年地下军</p>
                 </div>
-            </div>
-            <div class="highlight-card">
+            </a>
+            <a href="huashan.html" class="highlight-card">
                 <img src="ll\华山.jpg" alt="华山">
                 <div class="highlight-content">
                     <h3>华山</h3>
                     <p>五岳之西岳，险峻秀丽的自然奇观</p>
                 </div>
-            </div>
-            <div class="highlight-card">
+            </a>
+            <a href="datang.html" class="highlight-card">
                 <img src="ll/大唐不夜城.jpeg" alt="大唐不夜城">
                 <div class="highlight-content">
                     <h3>大唐不夜城</h3>
                     <p>感受盛唐文化，体验不夜长安的繁华</p>
                 </div>
-            </div>
+            </a>
         </div>
     </section>
 
@@ -317,11 +443,43 @@
             <div class="season-card">
                 <h3>春季</h3>
                 <p>3月-5月</p>
+                <div class="season-slideshow">
+                    <div class="season-slides">
+                        <div class="season-slide">
+                            <img src="ll\spring1.jpg">
+                        </div>
+                        <div class="season-slide">
+                            <img src="ll\spring2.jpg">
+                        </div>
+                        <div class="season-slide">
+                            <img src="ll\spring3.jpg">
+                        </div>
+                    </div>
+                    <div class="slide-arrow prev">❮</div>
+                    <div class="slide-arrow next">❯</div>
+                    <div class="slide-indicators"></div>
+                </div>
                 <p>春暖花开，适合赏花踏青</p>
             </div>
             <div class="season-card">
                 <h3>秋季</h3>
                 <p>9月-11月</p>
+                <div class="season-slideshow">
+                    <div class="season-slides">
+                        <div class="season-slide">
+                            <img src="ll\autumn1.jpg">
+                        </div>
+                        <div class="season-slide">
+                            <img src="ll\autumn2.jpeg">
+                        </div>
+                        <div class="season-slide">
+                            <img src="ll\autumn3.jpg">
+                        </div>
+                    </div>
+                    <div class="slide-arrow prev">❮</div>
+                    <div class="slide-arrow next">❯</div>
+                    <div class="slide-indicators"></div>
+                </div>
                 <p>天高气爽，是旅游的黄金季节</p>
             </div>
         </div>
@@ -395,6 +553,95 @@
             video.play().catch(function(error) {
                 console.log("初始播放失败:", error);
             });
+        });
+
+        // 添加轮播图脚本
+        document.addEventListener('DOMContentLoaded', function() {
+            function initSlideshow(container) {
+                const slidesWrapper = container.querySelector('.season-slides');
+                const slides = container.querySelectorAll('.season-slide');
+                const prevBtn = container.querySelector('.prev');
+                const nextBtn = container.querySelector('.next');
+                const indicators = container.querySelector('.slide-indicators');
+                
+                let currentSlide = 0;
+                const slideCount = slides.length;
+
+                // 创建指示器
+                for (let i = 0; i < slideCount; i++) {
+                    const dot = document.createElement('div');
+                    dot.className = `indicator ${i === 0 ? 'active' : ''}`;
+                    dot.addEventListener('click', () => goToSlide(i));
+                    indicators.appendChild(dot);
+                }
+
+                // 更新幻灯片状态
+                function updateSlides() {
+                    slides.forEach((slide, index) => {
+                        slide.className = 'season-slide';
+                        if (index === currentSlide) {
+                            slide.classList.add('active');
+                        } else if (index === (currentSlide - 1 + slideCount) % slideCount) {
+                            slide.classList.add('prev');
+                        } else if (index === (currentSlide + 1) % slideCount) {
+                            slide.classList.add('next');
+                        }
+                    });
+
+                    // 更新指示器
+                    const dots = indicators.querySelectorAll('.indicator');
+                    dots.forEach((dot, index) => {
+                        dot.classList.toggle('active', index === currentSlide);
+                    });
+                }
+
+                // 切换到指定幻灯片
+                function goToSlide(index) {
+                    currentSlide = index;
+                    updateSlides();
+                }
+
+                // 下一张幻灯片
+                function nextSlide() {
+                    currentSlide = (currentSlide + 1) % slideCount;
+                    updateSlides();
+                }
+
+                // 上一张幻灯片
+                function prevSlide() {
+                    currentSlide = (currentSlide - 1 + slideCount) % slideCount;
+                    updateSlides();
+                }
+
+                // 添加按钮事件监听
+                prevBtn.addEventListener('click', prevSlide);
+                nextBtn.addEventListener('click', nextSlide);
+
+                // 添加键盘控制
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowLeft') prevSlide();
+                    if (e.key === 'ArrowRight') nextSlide();
+                });
+
+                // 初始化显示
+                updateSlides();
+
+                // 自动播放
+                let autoplayInterval = setInterval(nextSlide, 4000);
+
+                // 鼠标悬停时暂停自动播放
+                container.addEventListener('mouseenter', () => {
+                    clearInterval(autoplayInterval);
+                });
+
+                // 鼠标离开时恢复自动播放
+                container.addEventListener('mouseleave', () => {
+                    autoplayInterval = setInterval(nextSlide, 4000);
+                });
+            }
+
+            // 初始化所有轮播图
+            document.querySelectorAll('.season-slideshow').forEach(initSlideshow);
         });
     </script>
 </body>
